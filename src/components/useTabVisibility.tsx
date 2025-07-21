@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 
-const useTabVisibility = (onHidden, onVisible) => {
+const useTabVisibility = (
+  onHidden?: () => void,
+  onVisible?: () => void
+): void => {
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
@@ -18,5 +21,4 @@ const useTabVisibility = (onHidden, onVisible) => {
   }, [onHidden, onVisible]);
 };
 
-
-export default useTabVisibility
+export default useTabVisibility;
